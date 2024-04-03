@@ -1,0 +1,18 @@
+
+
+.container
+{
+    background: linear-gradient(#778beb,white);
+    height:2000px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1000px;
+}
+
+.title
+{
+    margin-top: 200px;
+    margin-left: 1000px;
+}

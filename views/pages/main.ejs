@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../style/global.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vikruti Software</title>
+    
+</head>
+
+<body>
+    <h1>hfg</h1>
+    <div class="container" >
+        
+                <div id="title"></div>
+            </div>
+        </div>
+
+        <!------------------------------------------------------------------------------------------------------------------------------->
+    </div>
+
+    <!----------------javascript Code---------------------->
+    <script>
+
+        fetch("http://localhost:3000/products")
+            .then(res => {
+                return res.json()
+            })
+            .then(data => {
+                data.forEach(user => {
+                    const products = `<div style="display:flex">
+                        <div style="border:1px solid black; height:130px;width:130px; border-radius:3%; margin-right:20px;margin-bottom:10px">
+                            <img src=${user.thumbnail} class="prd_img" style="height:130px;width:130px;">
+                            </div>
+                    <div style="height:130px; width:700px ; border:1px solid black;background-color:#dcdde1; border-radius:3%;  margin-bottom:20px">
+                        <div style="display:flex;justify-content:space-between">
+                            <div>
+                        <div style="font-size:1.5rem ">
+                            <p><b>${user.title}</b></p>
+                            </div>
+                            <div style="font-size:1.0rem">
+                                <p>${user.description}</p>
+                                </div>
+                                </div>
+                                <div style="color:green; font-size:1.5rem ; justify-content:space-between">
+                                    <p><b>${user.price}$</b></p>
+                                </div>
+                            </div>
+                            </div>`
+
+                    let title = document.getElementById('title')
+                    title.insertAdjacentHTML('beforeend', products)
+                })
+            })
+        
+    </script>
+</body>
+
+</html>
